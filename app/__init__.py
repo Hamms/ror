@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template
+from flaskext.markdown import Markdown
 
 def create_app(config_overrides={}):
     """Create and return an Flask app instance"""
@@ -8,6 +9,8 @@ def create_app(config_overrides={}):
     app = Flask(__name__)
     app.config.from_object('config')
     app.config.update(**config_overrides)
+
+    Markdown(app)
 
     # error page handlers
     @app.errorhandler(404)

@@ -13,7 +13,7 @@
     <h2>Comments</h2>
     {% for comment in submission.comments %}
         <hr>
-        <p>{{ comment.body }}</p>
+        <p>{{ comment.body | markdown }}</p>
     {% endfor %}
 </div>
 {% endblock %}
