@@ -9,8 +9,6 @@ def create_app(config_overrides={}):
     app.config.from_object('config')
     app.config.update(**config_overrides)
 
-    db.init_app(app)
-
     # error page handlers
     @app.errorhandler(404)
     def not_found(error):
