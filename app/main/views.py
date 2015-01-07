@@ -16,7 +16,7 @@ def index():
 
         return render_template('main/index.html')
 
-    elif request.mehtod == 'POST':
+    elif request.method == 'POST':
 
         url = request.form.get('thread_url')
 
