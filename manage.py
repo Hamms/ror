@@ -3,9 +3,7 @@
 from flask.ext.script import Manager, Server
 from flask.ext.script.commands import Clean, ShowUrls
 
-from app import create_app
-
-app = create_app()
+from app import app
 
 manager = Manager(app)
 manager.add_command("runserver", Server(host=app.config.get('HOST'), port=app.config.get('PORT')))
