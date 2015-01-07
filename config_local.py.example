@@ -1,0 +1,7 @@
+DEBUG = True
+
+HOST = '0.0.0.0'
+
+# CHANGE THESE
+SECRET_KEY = "a_different_secret_key"
+CSRF_SESSION_KEY = "a_different_other_secret_key"
