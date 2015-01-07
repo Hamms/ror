@@ -42,6 +42,7 @@ def thread(submission_id):
 
     # Temporary hack to get around Jinja2's hesitation to render escaped
     # HTML as raw html.
-    submission.selftext_html = HTMLParser.HTMLParser().unescape(submission.selftext_html)
+    if submission.selftext_html:
+        submission.selftext_html = HTMLParser.HTMLParser().unescape(submission.selftext_html)
 
     return render_template('main/thread.html', submission=submission)
