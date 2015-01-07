@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+*.pyo
+.tox
+
+config_local.py
