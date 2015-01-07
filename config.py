@@ -6,7 +6,7 @@ THREADS_PER_PAGE = 8
 DEBUG = False
 
 HOST = '0.0.0.0'
-PORT = 8000
+PORT = 80
 
 # both SECRET_KEY and CSRF_SESSION_KEY should  be overwridden in
 # config_local
