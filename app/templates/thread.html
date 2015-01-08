@@ -5,15 +5,23 @@
 {% block content %}
 {{ super() }}
 <div class="container">
-    <h1>{{submission.title}}</h1>
-    {{ submission.selftext_html | safe }}
+    <h1>{{submission.title}} <small>/r/{{submission.subreddit }}</small></h1>
+    {% if submission.selftext_html %}
+        {{ submission.selftext_html | safe }}
+    {% endif %}
 </div>
 
 <div class="container">
-    <h2>Comments</h2>
-    {% for comment in submission.comments %}
-        <hr>
-        <p>{{ comment.body | markdown }}</p>
-    {% endfor %}
+    {% if submission.comments %}
+        <h2>Comments</h2>
+        {% for comment in submission.comments %}
+            {% if comment.body and comment.body != '[deleted]' %}
+                <hr>
+                <p>{{ comment.body | markdown }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <h3>No Comments</h3>
+    {% endif %}
 </div>
 {% endblock %}
